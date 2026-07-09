@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carne Seca El Inge | Carne Seca y Machaca Artesanal en Fresnillo, Zacatecas</title>
+  <meta name="description" content="Carne Seca El Inge: carne seca, machaca, chile chiltepín, salsas y crema de mezcal 100% artesanales, hechos a mano en Fresnillo, Zacatecas. Pide por WhatsApp y recibe en todo México." />
+  <meta name="keywords" content="carne seca, machaca, carne seca artesanal, chile chiltepín, salsas artesanales, crema de mezcal, frutos deshidratados, Fresnillo Zacatecas, El Inge, carne seca a domicilio" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Carne Seca El Inge | Calidad Artesanal de Fresnillo, Zacatecas" />
+  <meta property="og:description" content="Carne seca, machaca, chile chiltepín y crema de mezcal, elaborados a mano con recetas de rancho. Pide por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
+  <div id="siteLoader" class="site-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-rings">
+        <div class="loader-pulse pulse-1"></div>
+        <div class="loader-pulse pulse-2"></div>
+        <div class="loader-ring ring-1"></div>
+        <div class="loader-ring ring-2"></div>
+        <div class="loader-ring ring-3"></div>
+        <div class="loader-logo-wrap">
+          <img src="logo.png" alt="Carne Seca El Inge" class="loader-logo-img" />
+        </div>
+      </div>
+      <div class="loader-progress-wrap"><div class="loader-progress-bar" id="loaderBar"></div></div>
+      <div class="loader-brand"><span class="loader-brand-text">EL INGE</span></div>
+      <p class="loader-tagline">Calidad Artesanal · Fresnillo, Zac.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header id="navbar" class="navbar">
+    <div class="navbar-inner">
+      <a href="#inicio" class="logo-wrap">
+        <img src="logo.png" alt="Carne Seca El Inge" class="logo-icon-img" />
+        <span class="logo-text-group">
+          <span class="logo-text">EL INGE</span>
+          <span class="logo-subtext">Carne Seca Artesanal</span>
+        </span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="#inicio"    class="nav-link">Inicio</a>
+        <a href="#productos" class="nav-link">Productos</a>
+        <a href="#coleccion" class="nav-link">Colección</a>
+        <a href="#aprende"   class="nav-link">Proceso</a>
+        <a href="#empresas"  class="nav-link">Mayoreo</a>
+        <a href="#sobre-mi"  class="nav-link">Historia</a>
+        <a href="#contacto"  class="nav-link">Contacto</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#productos" class="btn-nav">Pedir Ahora</a>
+        <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-nav">
+        <a href="#inicio"    class="nav-link-mobile" onclick="closeMobileMenu()">Inicio</a>
+        <a href="#productos" class="nav-link-mobile" onclick="closeMobileMenu()">Productos</a>
+        <a href="#coleccion" class="nav-link-mobile" onclick="closeMobileMenu()">Colección</a>
+        <a href="#aprende"   class="nav-link-mobile" onclick="closeMobileMenu()">Proceso</a>
+        <a href="#empresas"  class="nav-link-mobile" onclick="closeMobileMenu()">Mayoreo</a>
+        <a href="#sobre-mi"  class="nav-link-mobile" onclick="closeMobileMenu()">Historia</a>
+        <a href="#contacto"  class="nav-link-mobile" onclick="closeMobileMenu()">Contacto</a>
+        <a href="#productos" class="btn-nav mt-mobile" onclick="closeMobileMenu()">Pedir Ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — Centrado, degradado de marca, efectos atmosféricos
+    ============================================================ -->
+    <section id="inicio" class="hero-section">
+
+      <!-- Fondo de marca (degradado, sin foto) -->
+      <div class="hero-bg-img" aria-hidden="true"></div>
+
+      <!-- Canvas principal: brasas doradas ascendiendo -->
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+      <!-- Canvas secundario: chispas de color de marca -->
+      <canvas id="dotsCanvas" class="hero-canvas" style="z-index:2;opacity:0.85;"></canvas>
+
+      <!-- Sello artesanal decorativo SVG -->
+      <div class="waterdrop-wrap" aria-hidden="true" id="waterDrop">
+        <svg class="waterdrop-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="dropFill" cx="42%" cy="35%" r="58%">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.10)"/>
+              <stop offset="60%"  stop-color="rgba(201,129,47,0.05)"/>
+              <stop offset="100%" stop-color="rgba(201,129,47,0.01)"/>
+            </radialGradient>
+            <radialGradient id="dropShine" cx="30%" cy="20%" r="40%">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.30)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+            </radialGradient>
+            <filter id="dropBlur">
+              <feGaussianBlur stdDeviation="1.5"/>
+            </filter>
+          </defs>
+          <!-- Anillos de sello, estilo timbre artesanal -->
+          <circle cx="200" cy="200" r="192" stroke="rgba(201,129,47,0.16)" stroke-width="1.5" stroke-dasharray="3 9"/>
+          <circle cx="200" cy="200" r="158" stroke="rgba(201,129,47,0.14)" stroke-width="1"/>
+          <!-- Cuerpo del sello -->
+          <circle class="drop-body" cx="200" cy="200" r="118"
+            fill="url(#dropFill)"
+            stroke="rgba(201,129,47,0.28)" stroke-width="1.2"/>
+          <!-- Brillo superior -->
+          <circle class="drop-shine" cx="200" cy="200" r="118"
+            fill="url(#dropShine)" opacity="0.55"/>
+          <!-- Reflejo pequeño -->
+          <ellipse class="drop-reflex" cx="150" cy="150" rx="26" ry="16"
+            fill="rgba(255,255,255,0.16)" transform="rotate(-30 150 150)"
+            filter="url(#dropBlur)"/>
+          <!-- Llama artesanal en el centro -->
+          <path d="M200 132c-14 20-34 32-34 56a34 34 0 0 0 68 0c0-11-4-20-9-28 1 10-5 16-11 18 5-17-5-32-14-41 1 11-4 19-10 24-6-6-3-17 10-29z"
+            fill="none" stroke="rgba(232,178,102,0.4)" stroke-width="1.4"/>
+        </svg>
+      </div>
+
+      <!-- Capas atmosféricas -->
+      <div class="atmo-layers" aria-hidden="true">
+        <div class="atmo-fog fog-1"></div>
+        <div class="atmo-fog fog-2"></div>
+        <div class="atmo-fog fog-3"></div>
+        <div class="atmo-vignette"></div>
+        <div class="atmo-ray ray-1"></div>
+        <div class="atmo-ray ray-2"></div>
+        <div class="atmo-ray ray-3"></div>
+        <div class="atmo-dust dust-1">✦</div>
+        <div class="atmo-dust dust-2">✦</div>
+        <div class="atmo-dust dust-3">◆</div>
+        <div class="atmo-dust dust-4">✦</div>
+      </div>
+
+      <!-- Contenido centrado -->
+      <div class="hero-center" id="heroCenter">
+
+        <!-- Línea acento + badge -->
+        <div class="hero-accent-line hero-el" data-delay="0" id="heroBadge">
+          <span class="hero-accent-bar"></span>
+          <div class="hero-badge" style="margin-bottom:0; opacity:1; transform:none;">
+            <span class="badge-dot"></span>
+            <span class="badge-shine"></span>
+            Calidad Artesanal · Fresnillo, Zac.
+          </div>
+        </div>
+
+        <!-- Título -->
+        <h1 class="hero-title hero-el" data-delay="1" id="heroTitle">
+          Carne seca y machaca con el sabor auténtico
+          <em class="hero-em"> del rancho zacatecano.</em>
+        </h1>
+
+        <!-- Divider -->
+        <div class="hero-divider hero-el" data-delay="2" id="heroDivider"></div>
+
+        <!-- Subtítulo -->
+        <p class="hero-sub hero-el" data-delay="3" id="heroSub">
+          Elaboramos carne seca, machaca, chile chiltepín y crema de mezcal en pequeños lotes,
+          <strong>con recetas de familia y calidad 100% artesanal.</strong>
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas hero-el" id="heroCtas" data-delay="4">
+          <a href="#productos" class="btn-primary btn-mag">
+            <span>Ver Productos</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="btn-shine-fx"></span>
+          </a>
+          <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Carne%20Seca%20El%20Inge" class="btn-ghost btn-mag" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-4.8 7.6 8.5 8.5 0 0 1-9.5-1.2L3 19l1.1-3.7a8.5 8.5 0 0 1 12.9-10A8.38 8.38 0 0 1 21 11.5z"/></svg>
+            <span>Pedir por WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Trust pills -->
+        <div class="hero-trust hero-el" id="heroTrust" data-delay="5">
+          <div class="trust-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="2"><path d="M12 2L9.5 8.5H3L8 13L5.8 20L12 16L18.2 20L16 13L21 8.5H14.5L12 2Z"/></svg>100% Artesanal</div>
+          <div class="trust-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sin Conservadores</div>
+          <div class="trust-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="2"><path d="M12 3C7 3 3 7 3 12c0 1 1 2 2 2 5 0 10-4 10-11 0 0-1 0-3 0z"/></svg>Ingredientes Naturales</div>
+          <div class="trust-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Envíos a Todo México</div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="hero-stats hero-el" id="heroStats" data-delay="6">
+          <div class="hstat"><span class="hstat-num" data-count-to="6">0</span><span class="hstat-lbl">Líneas de Producto</span></div>
+          <div class="hstat-sep"></div>
+          <div class="hstat"><span class="hstat-num" data-count-to="100" data-suffix="%">0%</span><span class="hstat-lbl">Artesanal</span></div>
+          <div class="hstat-sep"></div>
+          <div class="hstat"><span class="hstat-num" data-count-to="500" data-prefix="+">+0</span><span class="hstat-lbl">Clientes Felices</span></div>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-cue" id="scrollCue">
+        <div class="sc-mouse"><div class="sc-wheel"></div></div>
+        <span>Explorar</span>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         SECCIONES DE PRODUCTO — 4 secciones individuales premium
+    ============================================================ -->
+    <div id="productos">
+
+      <!-- ── PRODUCTO 1: CARNE SECA ── imagen izquierda -->
+      <section class="product-section ps-carne" data-product="1">
+        <div class="ps-container">
+          <div class="ps-image-col ps-img-left">
+            <div class="ps-img-wrap prod-reveal-img">
+              <div class="ps-img-glow glow-carne"></div>
+              <img src="imagenes/carne-seca-bolsa.jpg" alt="Bolsa de Carne Seca artesanal El Inge, 100% res, hecha a mano en Fresnillo, Zacatecas" class="ps-img" loading="lazy"/>
+              <div class="ps-img-frame"></div>
+            </div>
+          </div>
+          <div class="ps-info-col prod-reveal-text">
+            <div class="ps-eyebrow">
+              <span class="ps-number">01</span>
+              <span class="ps-line"></span>
+              <span class="ps-category">Nuestra Especialidad</span>
+            </div>
+            <h2 class="ps-name">Carne Seca</h2>
+            <p class="ps-tagline">El clásico que nunca falla.</p>
+            <p class="ps-desc">
+              Res seleccionada, salada y secada al método tradicional del norte de México. Lista para comer sola, en tacos o para preparar tu machaca favorita — sin conservadores ni químicos.
+            </p>
+            <ul class="ps-benefits">
+              <li><span class="ps-dot"></span>100% carne de res, sin conservadores</li>
+              <li><span class="ps-dot"></span>Secado artesanal en lotes pequeños</li>
+              <li><span class="ps-dot"></span>Ideal para botanear, tacos o caldo</li>
+              <li><span class="ps-dot"></span>Presentaciones de 250g, 500g y 1kg</li>
+            </ul>
+            <div class="ps-cta-row">
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Carne%20Seca%20El%20Inge" class="btn-primary btn-mag" target="_blank" rel="noopener noreferrer">
+                <span>Pedir Carne Seca</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="btn-shine-fx"></span>
+              </a>
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Carne%20Seca%20El%20Inge" target="_blank" rel="noopener noreferrer" class="ps-link">Ver más detalles →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PRODUCTO 2: MACHACA ── imagen derecha -->
+      <section class="product-section ps-machaca ps-reverse" data-product="2">
+        <div class="ps-container">
+          <div class="ps-info-col prod-reveal-text">
+            <div class="ps-eyebrow">
+              <span class="ps-number">02</span>
+              <span class="ps-line"></span>
+              <span class="ps-category">Lista en Minutos</span>
+            </div>
+            <h2 class="ps-name">Machaca</h2>
+            <p class="ps-tagline">Desayunos rápidos, sabor de domingo.</p>
+            <p class="ps-desc">
+              Carne seca deshebrada a mano y lista para guisar. Solo agrega huevo, cebolla y chile — el desayuno norteño perfecto en menos de 10 minutos.
+            </p>
+            <ul class="ps-benefits">
+              <li><span class="ps-dot"></span>Deshebrada finamente, lista para cocinar</li>
+              <li><span class="ps-dot"></span>Perfecta para machaca con huevo, burritos o quesadillas</li>
+              <li><span class="ps-dot"></span>Alta en proteína — ideal para deportistas</li>
+              <li><span class="ps-dot"></span>Se conserva fresca por semanas</li>
+            </ul>
+            <div class="ps-cta-row">
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Machaca%20El%20Inge" class="btn-primary btn-mag" target="_blank" rel="noopener noreferrer">
+                <span>Pedir Machaca</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="btn-shine-fx"></span>
+              </a>
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Machaca%20El%20Inge" target="_blank" rel="noopener noreferrer" class="ps-link">Ver más detalles →</a>
+            </div>
+          </div>
+          <div class="ps-image-col ps-img-right">
+            <div class="ps-img-wrap prod-reveal-img">
+              <div class="ps-img-glow glow-machaca"></div>
+              <img src="imagenes/carne-seca-detalle.jpg" alt="Machaca de res El Inge, carne seca deshebrada lista para preparar" class="ps-img" loading="lazy"/>
+              <div class="ps-img-frame"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PRODUCTO 3: CHILE CHILTEPÍN ── imagen izquierda -->
+      <section class="product-section ps-chiltepin" data-product="3">
+        <div class="ps-container">
+          <div class="ps-image-col ps-img-left">
+            <div class="ps-img-wrap prod-reveal-img">
+              <div class="ps-img-glow glow-chiltepin"></div>
+              <img src="imagenes/chiltepin-linea.jpg" alt="Chile Chiltepín entero, molido y en pasta, cosecha silvestre 100% artesanal" class="ps-img" loading="lazy"/>
+              <div class="ps-img-frame"></div>
+            </div>
+          </div>
+          <div class="ps-info-col prod-reveal-text">
+            <div class="ps-eyebrow">
+              <span class="ps-number">03</span>
+              <span class="ps-line"></span>
+              <span class="ps-category">Para Valientes del Picante</span>
+            </div>
+            <h2 class="ps-name">Chile Chiltepín</h2>
+            <p class="ps-tagline">El chile silvestre más picante de la sierra.</p>
+            <p class="ps-desc">
+              Cosechado a mano en la sierra, nuestro chiltepín llega entero, molido, en pasta o en salsa — para quienes de verdad aman el picante auténtico.
+            </p>
+            <ul class="ps-benefits">
+              <li><span class="ps-dot"></span>Disponible entero, molido, en pasta o salsa</li>
+              <li><span class="ps-dot"></span>Cosecha silvestre de la sierra</li>
+              <li><span class="ps-dot"></span>Ingredientes: chiltepín, ajo y especias</li>
+              <li><span class="ps-dot"></span>El toque perfecto para carnes, sopas y salsas</li>
+            </ul>
+            <div class="ps-cta-row">
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20el%20Chile%20Chiltep%C3%ADn%20El%20Inge" class="btn-primary btn-mag" target="_blank" rel="noopener noreferrer">
+                <span>Pedir Chiltepín</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="btn-shine-fx"></span>
+              </a>
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20el%20Chile%20Chiltep%C3%ADn%20El%20Inge" target="_blank" rel="noopener noreferrer" class="ps-link">Ver más detalles →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PRODUCTO 4: CREMA DE MEZCAL ── imagen derecha -->
+      <section class="product-section ps-mezcal ps-reverse" data-product="4">
+        <div class="ps-container">
+          <div class="ps-info-col prod-reveal-text">
+            <div class="ps-eyebrow">
+              <span class="ps-number">04</span>
+              <span class="ps-line"></span>
+              <span class="ps-category">Para Compartir y Celebrar</span>
+            </div>
+            <h2 class="ps-name">Crema de Mezcal</h2>
+            <p class="ps-tagline">Un brindis artesanal, hecho a mano.</p>
+            <p class="ps-desc">
+              Licor artesanal cremoso a base de mezcal, elaborado en pequeños lotes. Perfecto como digestivo, para coctelería o para darle un giro especial a tus reuniones.
+            </p>
+            <ul class="ps-benefits">
+              <li><span class="ps-dot"></span>Elaborado en pequeños lotes artesanales</li>
+              <li><span class="ps-dot"></span>Ideal para digestivos y coctelería</li>
+              <li><span class="ps-dot"></span>Presentación perfecta para regalo</li>
+              <li><span class="ps-dot"></span>Producción limitada</li>
+            </ul>
+            <div class="ps-cta-row">
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Crema%20de%20Mezcal%20El%20Inge" class="btn-primary btn-mag" target="_blank" rel="noopener noreferrer">
+                <span>Pedir Crema de Mezcal</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="btn-shine-fx"></span>
+              </a>
+              <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Crema%20de%20Mezcal%20El%20Inge" target="_blank" rel="noopener noreferrer" class="ps-link">Ver más detalles →</a>
+            </div>
+          </div>
+          <div class="ps-image-col ps-img-right">
+            <div class="ps-img-wrap prod-reveal-img">
+              <div class="ps-img-glow glow-mezcal"></div>
+              <img src="imagenes/crema-mezcal.jpg" alt="Crema de Mezcal artesanal El Inge, licor cremoso hecho a mano" class="ps-img" loading="lazy"/>
+              <div class="ps-img-frame"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /productos -->
+
+    <!-- ===== PROCESO ARTESANAL ===== -->
+    <section class="ritual-section">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag reveal-up">Proceso Artesanal</div>
+          <h2 class="section-title reveal-up">Del Rancho a Tu Mesa</h2>
+          <p class="section-sub reveal-up">Así preparamos cada producto El Inge, con el mismo cuidado de siempre.</p>
+        </div>
+        <div class="ritual-steps">
+          <div class="ritual-step reveal-up" style="--i:0"><div class="rs-number">01</div><div class="rs-tag rtag-carne">SELECCIÓN</div><h3 class="rs-title">Elegimos la Carne</h3><p class="rs-desc">Trabajamos con res fresca y cortes seleccionados de proveedores de confianza del norte de México.</p><div class="rs-arrow">→</div></div>
+          <div class="ritual-step reveal-up" style="--i:1"><div class="rs-number">02</div><div class="rs-tag rtag-machaca">SECADO</div><h3 class="rs-title">Salamos y Secamos</h3><p class="rs-desc">Método tradicional de secado lento, sin conservadores ni químicos — igual que hace generaciones.</p><div class="rs-arrow">→</div></div>
+          <div class="ritual-step reveal-up" style="--i:2"><div class="rs-number">03</div><div class="rs-tag rtag-chiltepin">SAZÓN</div><h3 class="rs-title">Le Damos Sabor</h3><p class="rs-desc">Especias selectas y, para quien lo pide, nuestro chile chiltepín de la sierra para un toque único.</p><div class="rs-arrow">→</div></div>
+          <div class="ritual-step reveal-up" style="--i:3"><div class="rs-number">04</div><div class="rs-tag rtag-mezcal">EMPAQUE</div><h3 class="rs-title">Empacamos a Mano</h3><p class="rs-desc">Cada bolsa se revisa y empaca en lotes pequeños para garantizar frescura hasta tu mesa.</p><div class="rs-arrow rs-final">✦</div></div>
+        </div>
+        <div class="ritual-cta reveal-up">
+          <div class="ritual-cta-box">
+            <p class="rcta-text"><em class="gold-em">¿Ya se te antojó?</em> Pídelo ahora mismo.</p>
+            <a href="https://wa.me/526145540702?text=Hola,%20quiero%20hacer%20un%20pedido%20de%20Carne%20Seca%20El%20Inge" class="btn-primary btn-mag" target="_blank" rel="noopener noreferrer"><span>Hacer Mi Pedido</span><span class="btn-shine-fx"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COLECCIÓN GRID ===== -->
+    <section class="collection-section" id="coleccion">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag reveal-up">Nuestra Colección</div>
+          <h2 class="section-title reveal-up">6 Sabores, Una Sola Tradición</h2>
+          <p class="section-sub reveal-up">Cada producto elaborado con intención, para llevar el sabor del norte a tu mesa.</p>
+        </div>
+        <div class="products-grid">
+          <article class="product-card pc-carne reveal-up" style="--i:0">
+            <div class="pc-visual">
+              <div class="pc-glow pc-glow-carne"></div>
+              <img src="imagenes/carne-seca-jarra.jpg" alt="Carne Seca El Inge en frasco, calidad artesanal de Fresnillo, Zacatecas" class="pc-product-img" loading="lazy"/>
+              <div class="pc-badge">Más Vendido</div>
+            </div>
+            <div class="pc-info"><h3 class="pc-name">Carne Seca</h3><p class="pc-purpose">Nuestra Especialidad</p><p class="pc-desc">Res 100% seleccionada, secada al estilo tradicional del norte.</p><a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Carne%20Seca%20El%20Inge" target="_blank" rel="noopener noreferrer" class="btn-product">Ver más →</a></div>
+          </article>
+
+          <article class="product-card pc-machaca reveal-up" style="--i:1">
+            <div class="pc-visual">
+              <div class="pc-glow pc-glow-machaca"></div>
+              <img src="imagenes/productos-coleccion.jpg" alt="Machaca y carne seca El Inge, línea completa de productos artesanales" class="pc-product-img" loading="lazy"/>
+            </div>
+            <div class="pc-info"><h3 class="pc-name">Machaca</h3><p class="pc-purpose">Lista en Minutos</p><p class="pc-desc">Carne deshebrada, perfecta para tus desayunos y antojos rápidos.</p><a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Machaca%20El%20Inge" target="_blank" rel="noopener noreferrer" class="btn-product">Ver más →</a></div>
+          </article>
+
+          <article class="product-card pc-chiltepin reveal-up" style="--i:2">
+            <div class="pc-visual">
+              <div class="pc-glow pc-glow-chiltepin"></div>
+              <img src="imagenes/chiltepin-linea.jpg" alt="Chile Chiltepín entero, molido y en pasta, cosecha silvestre artesanal" class="pc-product-img" loading="lazy"/>
+            </div>
+            <div class="pc-info"><h3 class="pc-name">Chile Chiltepín</h3><p class="pc-purpose">Picante de la Sierra</p><p class="pc-desc">Entero, molido o en pasta — el chile silvestre más auténtico.</p><a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20el%20Chile%20Chiltep%C3%ADn%20El%20Inge" target="_blank" rel="noopener noreferrer" class="btn-product">Ver más →</a></div>
+          </article>
+
+          <article class="product-card pc-salsas reveal-up" style="--i:3">
+            <div class="pc-visual pc-visual-icon">
+              <div class="pc-glow pc-glow-salsas"></div>
+              <div class="pc-icon-badge" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 2h4v3.5l2.2 3.3c.5.8.8 1.7.8 2.7V19a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V11.5c0-1 .3-1.9.8-2.7L10 5.5V2z"/><path d="M9.5 9h5"/></svg>
+              </div>
+            </div>
+            <div class="pc-info"><h3 class="pc-name">Salsas Artesanales</h3><p class="pc-purpose">Sabor con Historia</p><p class="pc-desc">Salsas caseras hechas con chiltepín y especias de la región.</p><a href="https://wa.me/526145540702?text=Hola,%20me%20interesan%20las%20Salsas%20Artesanales%20El%20Inge" target="_blank" rel="noopener noreferrer" class="btn-product">Ver más →</a></div>
+          </article>
+
+          <article class="product-card pc-mezcal reveal-up" style="--i:4">
+            <div class="pc-visual">
+              <div class="pc-glow pc-glow-mezcal"></div>
+              <img src="imagenes/crema-mezcal.jpg" alt="Crema de Mezcal artesanal El Inge, licor cremoso ideal para regalo" class="pc-product-img" loading="lazy"/>
+            </div>
+            <div class="pc-info"><h3 class="pc-name">Crema de Mezcal</h3><p class="pc-purpose">Para Compartir</p><p class="pc-desc">Licor artesanal cremoso, ideal para regalar o brindar.</p><a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20la%20Crema%20de%20Mezcal%20El%20Inge" target="_blank" rel="noopener noreferrer" class="btn-product">Ver más →</a></div>
+          </article>
+
+          <article class="product-card pc-frutos reveal-up" style="--i:5">
+            <div class="pc-visual pc-visual-icon">
+              <div class="pc-glow pc-glow-frutos"></div>
+              <div class="pc-icon-badge" aria-hidden="true">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c-5 0-9 4-9 9 0 1 1 2 2 2 5 0 10-4 10-11 0 0-1 0-3 0z"/><path d="M12 3c2 3 2 7-1 11"/></svg>
+              </div>
+            </div>
+            <div class="pc-info"><h3 class="pc-name">Frutos Deshidratados</h3><p class="pc-purpose">Snack Natural</p><p class="pc-desc">Fruta deshidratada sin azúcares añadidos, dulce 100% natural.</p><a href="https://wa.me/526145540702?text=Hola,%20me%20interesan%20los%20Frutos%20Deshidratados%20El%20Inge" target="_blank" rel="noopener noreferrer" class="btn-product">Ver más →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ¿SE TE ANTOJA? ===== -->
+    <section class="identify-section" id="para-ti">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag reveal-up">¿Por qué El Inge?</div>
+          <h2 class="section-title reveal-up">¿Se te antoja esto?</h2>
+          <p class="section-sub reveal-up">Todo esto lo encuentras en un solo lugar.</p>
+        </div>
+        <div class="identify-grid">
+          <div class="identify-card reveal-up" style="--i:0"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><p>Extrañas el sabor de la carne seca de rancho</p></div>
+          <div class="identify-card reveal-up" style="--i:1"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M21 10v4"/></svg></div><p>Buscas una botana alta en proteína, sin conservadores</p></div>
+          <div class="identify-card reveal-up" style="--i:2"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c-1 3-4 4-4 8a4 4 0 0 0 8 0c0-1 0-2-.5-3 .5 2-1 3-2 3 .5-2-.5-3-1-4-.5 1 0 3-1 4-1-2 .5-4 1.5-8z"/></svg></div><p>Amas el picante de verdad, no el industrial</p></div>
+          <div class="identify-card reveal-up" style="--i:3"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15h8M9 9h.01M15 9h.01"/></svg></div><p>Quieres desayunar rico sin batallar</p></div>
+          <div class="identify-card reveal-up" style="--i:4"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M2 7h20M12 3v4M9 3h6"/></svg></div><p>Buscas un regalo diferente y con historia</p></div>
+          <div class="identify-card reveal-up" style="--i:5"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><p>Organizas un evento y necesitas botanas para muchos</p></div>
+          <div class="identify-card reveal-up" style="--i:6"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><p>Tienes un negocio y buscas proveedor confiable</p></div>
+          <div class="identify-card reveal-up" style="--i:7"><div class="id-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><p>Disfrutas cocinar con ingredientes 100% naturales</p></div>
+        </div>
+        <div class="identify-cta reveal-up"><p class="identify-cta-text">Tu antojo no puede esperar.</p><a href="#productos" class="btn-primary btn-mag"><span>Ver los Productos</span><span class="btn-shine-fx"></span></a></div>
+      </div>
+    </section>
+
+    <!-- ===== MÁS QUE COMIDA, TRADICIÓN ===== -->
+    <section class="learn-section" id="aprende">
+      <div class="section-container">
+        <div class="learn-grid">
+          <div class="learn-text reveal-left">
+            <div class="section-tag">Sabor con Historia</div>
+            <h2 class="section-title">Hecho Como Antes, <em>Pensado para Hoy</em></h2>
+            <p class="body-text">Cada receta de Carne Seca El Inge viene de generaciones de familias del norte de México que saben secar y sazonar la carne como se debe.</p>
+            <p class="body-text">Elegimos ingredientes reales, sin atajos ni conservadores, para que cada bolsa sepa como debe saber: a rancho, a tradición, a casa.</p>
+          </div>
+          <div class="learn-cards reveal-right">
+            <div class="learn-card"><div class="lc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div class="lc-body"><h4>Recetas con Machaca</h4><p>Ideas rápidas para desayunos, burritos y quesadillas con machaca El Inge.</p><a href="https://wa.me/526145540702?text=Hola,%20me%20interesan%20recetas%20con%20Machaca%20El%20Inge" target="_blank" rel="noopener noreferrer" class="lc-link">Ver Recetas →</a></div></div>
+            <div class="learn-card"><div class="lc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M2 7h20M12 3v4M9 3h6"/></svg></div><div class="lc-body"><h4>Kits y Regalos</h4><p>Arma tu combo de carne seca, chiltepín y crema de mezcal para regalar o compartir.</p><a href="https://wa.me/526145540702?text=Hola,%20quiero%20armar%20un%20kit%20de%20regalo%20El%20Inge" target="_blank" rel="noopener noreferrer" class="lc-link">Armar Mi Kit →</a></div></div>
+            <div class="learn-card"><div class="lc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="lc-body"><h4>Pedidos por Mayoreo</h4><p>Precios especiales para restaurantes, tiendas y eventos grandes.</p><a href="https://wa.me/526145540702?text=Hola,%20quiero%20cotizar%20un%20pedido%20de%20mayoreo%20El%20Inge" target="_blank" rel="noopener noreferrer" class="lc-link">Cotizar Mayoreo →</a></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAYOREO Y NEGOCIOS ===== -->
+    <section class="business-section" id="empresas">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag reveal-up">Mayoreo</div>
+          <h2 class="section-title reveal-up">Llevamos El Inge a Tu Negocio</h2>
+          <p class="section-sub reveal-up">Producto artesanal con calidad constante, para quienes venden sabor todos los días.</p>
+        </div>
+        <div class="business-grid">
+          <div class="biz-card reveal-up" style="--i:0"><div class="biz-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3>Restaurantes y Taquerías</h3><p>Ingredientes listos para tus platillos estrella, con calidad constante.</p></div>
+          <div class="biz-card reveal-up" style="--i:1"><div class="biz-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Tiendas y Abarrotes</h3><p>Surte tu negocio con productos artesanales de alta rotación.</p></div>
+          <div class="biz-card reveal-up" style="--i:2"><div class="biz-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Eventos y Fiestas</h3><p>Botanas y regalos artesanales que sorprenden a tus invitados.</p></div>
+          <div class="biz-card reveal-up" style="--i:3"><div class="biz-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M2 7h20M12 3v4M9 3h6"/></svg></div><h3>Regalos Corporativos</h3><p>Detalles auténticos de Zacatecas para tus clientes y equipo.</p></div>
+          <div class="biz-card reveal-up" style="--i:4"><div class="biz-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3>Deportistas y Vida Activa</h3><p>Snack alto en proteína, sin azúcares ni conservadores.</p></div>
+          <div class="biz-card reveal-up" style="--i:5"><div class="biz-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c-1 3-4 4-4 8a4 4 0 0 0 8 0c0-1 0-2-.5-3 .5 2-1 3-2 3 .5-2-.5-3-1-4-.5 1 0 3-1 4-1-2 .5-4 1.5-8z"/></svg></div><h3>Amantes del Picante</h3><p>Chiltepín en todas sus presentaciones para los paladares más exigentes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NUESTRA HISTORIA ===== -->
+    <section class="founder-section" id="sobre-mi">
+      <div class="section-container">
+        <div class="founder-grid">
+          <div class="founder-text reveal-up founder-text-centered">
+            <div class="section-tag">Nuestra Historia</div>
+            <h2 class="section-title">Conoce a <em>El Inge</em></h2>
+            <p class="body-text">Todo comenzó en Fresnillo, Zacatecas, con una receta familiar y las ganas de compartir el verdadero sabor del norte de México. Hoy, cada bolsa de Carne Seca El Inge se sigue preparando igual que la primera: con paciencia, buena carne y mucho orgullo.</p>
+            <p class="body-text">Hoy llevamos nuestra carne seca, machaca, salsas y chile chiltepín a cientos de hogares, negocios y eventos en todo México, siempre cuidando la calidad artesanal que nos caracteriza.</p>
+            <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Carne%20Seca%20El%20Inge" target="_blank" rel="noopener noreferrer" class="btn-outline">Conocer Más</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <!-- NOTA PARA EL CLIENTE: reemplazar estos testimonios de ejemplo por reseñas reales de clientes antes de publicar. -->
+    <section class="testimonials-section">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag reveal-up">Historias Reales</div>
+          <h2 class="section-title reveal-up">Lo Que Dicen Nuestros Clientes</h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testi-card reveal-up" style="--i:0"><div class="testi-quote">"</div><p class="testi-text">La carne seca de El Inge sabe como la que hacía mi papá en el rancho. Ya no compro en otro lado.</p><div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Roberto M.</div><div class="testi-role">Cliente frecuente</div></div></div><div class="testi-stars">★★★★★</div></div>
+          <div class="testi-card reveal-up" style="--i:1"><div class="testi-quote">"</div><p class="testi-text">Pedí el kit de regalo para un evento y fue un éxito total, todos preguntando dónde lo compré.</p><div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Karina L.</div><div class="testi-role">Organizadora de Eventos</div></div></div><div class="testi-stars">★★★★★</div></div>
+          <div class="testi-card reveal-up" style="--i:2"><div class="testi-quote">"</div><p class="testi-text">El chiltepín está buenísimo, se nota que es artesanal. Envío rápido y muy buena atención por WhatsApp.</p><div class="testi-author"><div class="testi-avatar">D</div><div><div class="testi-name">Daniel S.</div><div class="testi-role">Amante del Picante</div></div></div><div class="testi-stars">★★★★★</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ANTOJO ===== -->
+    <section class="diagnosis-section">
+      <div class="section-container">
+        <div class="diagnosis-box reveal-up">
+          <div class="diag-text">
+            <div class="section-tag">Haz Tu Pedido</div>
+            <h2 class="diag-title">¿Ya se te antojó <em>algo rico?</em></h2>
+            <p class="body-text">Escríbenos y te ayudamos a armar tu pedido: carne seca, machaca, chiltepín, crema de mezcal o un combo especial.</p>
+            <a href="https://wa.me/526145540702?text=Hola,%20quiero%20hacer%20un%20pedido%20de%20Carne%20Seca%20El%20Inge" class="btn-primary btn-mag" target="_blank" rel="noopener noreferrer"><span>Hacer Mi Pedido</span><span class="btn-shine-fx"></span></a>
+          </div>
+          <div class="diag-visual"><div class="diag-orb dob1"></div><div class="diag-orb dob2"></div><div class="diag-icon"><svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="0.8"><path d="M12 2C9 6 6 9 6 13a6 6 0 0 0 12 0c0-2-.8-3.6-1.6-5 .1 1.8-.9 2.8-1.9 3.2.9-3-1-5.6-2.5-7.2.3 2-.7 3.3-1.7 4.3C9.9 7.1 10.6 4.4 12 2z"/></svg></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="contact-section" id="contacto">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag reveal-up">Hablemos</div>
+          <h2 class="section-title reveal-up">¿Listo para <em>Antojarte?</em></h2>
+          <p class="section-sub reveal-up">Escríbenos por WhatsApp y te ayudamos a armar tu pedido de carne seca, machaca, chiltepín y más.</p>
+        </div>
+
+        <div class="contact-wa-layout">
+
+          <!-- Panel izquierdo: solo WhatsApp -->
+          <div class="wa-panel reveal-left">
+            <div class="wa-panel-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </div>
+            <h3 class="wa-panel-title">Escríbenos por WhatsApp</h3>
+            <p class="wa-panel-desc">Nuestro equipo está listo para tomar tu pedido, cotizar mayoreo o resolver cualquier duda sobre nuestros productos artesanales.</p>
+
+            <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Carne%20Seca%20El%20Inge" class="btn-wa-big" target="_blank" rel="noopener noreferrer">
+              <div class="btn-wa-big-pulse"></div>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              <div class="btn-wa-big-text">
+                <span class="btn-wa-big-label">Chatear ahora</span>
+                <span class="btn-wa-big-num">614 554 0702</span>
+              </div>
+            </a>
+
+            <div class="wa-panel-features">
+              <div class="wa-feat"><span class="wa-feat-dot"></span>Respuesta rápida</div>
+              <div class="wa-feat"><span class="wa-feat-dot"></span>Atención personalizada</div>
+              <div class="wa-feat"><span class="wa-feat-dot"></span>Envíos a todo México</div>
+            </div>
+          </div>
+
+          <!-- Panel derecho: formulario que envía a WA -->
+          <form class="contact-form reveal-right" id="contactForm" onsubmit="handleFormSubmit(event)">
+            <h3 class="form-title">Cuéntanos qué se te antoja</h3>
+            <p class="form-subtitle">Completa el formulario y te enviamos directamente a WhatsApp con tu pedido.</p>
+            <div class="form-group">
+              <label class="form-label">Nombre Completo *</label>
+              <input type="text" id="fNombre" class="form-input" placeholder="Tu nombre completo" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Teléfono (opcional)</label>
+              <input type="tel" id="fTelefono" class="form-input" placeholder="+52 xxx xxx xxxx" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">¿Qué te interesa?</label>
+              <select id="fInteres" class="form-input">
+                <option value="">Selecciona una opción</option>
+                <option>Carne Seca</option>
+                <option>Machaca</option>
+                <option>Chile Chiltepín</option>
+                <option>Salsas Artesanales</option>
+                <option>Crema de Mezcal</option>
+                <option>Frutos Deshidratados</option>
+                <option>Pedido de Mayoreo</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mensaje</label>
+              <textarea id="fMensaje" class="form-input form-textarea" placeholder="Cuéntanos cantidades, sabores o cualquier detalle de tu pedido..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-wa-submit btn-mag">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              <span>Enviar Pedido por WhatsApp</span>
+              <span class="btn-shine-fx"></span>
+            </button>
+            <p class="form-wa-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Al enviar, se abrirá WhatsApp con tu pedido listo para enviar.
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+      <div class="section-container">
+        <div class="trust-bar-grid">
+          <div class="tb-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="1.5"><path d="M5 12h14M19 12l-7-7-7 7"/></svg><span>Envíos a Todo México</span></div>
+          <div class="tb-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="1.5"><path d="M12 2L9.5 8.5H3L8 13L5.8 20L12 16L18.2 20L16 13L21 8.5H14.5L12 2Z"/></svg><span>100% Ingredientes Naturales</span></div>
+          <div class="tb-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Hecho a Mano con Orgullo Norteño</span></div>
+          <div class="tb-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9812F" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Calidad Artesanal Garantizada</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#inicio" class="logo-wrap">
+            <img src="logo.png" alt="Carne Seca El Inge" class="logo-icon-img" />
+            <span class="logo-text-group">
+              <span class="logo-text">EL INGE</span>
+              <span class="logo-subtext">Carne Seca Artesanal</span>
+            </span>
+          </a>
+          <p class="footer-tagline">El sabor artesanal de Zacatecas, directo a tu mesa.</p>
+          <!-- NOTA: reemplazar los enlaces "#" por las redes sociales reales del negocio -->
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4 class="footer-heading">Navegación</h4><ul class="footer-links"><li><a href="#inicio">Inicio</a></li><li><a href="#productos">Productos</a></li><li><a href="#aprende">Proceso</a></li><li><a href="#empresas">Mayoreo</a></li><li><a href="#sobre-mi">Historia</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+        <div class="footer-col"><h4 class="footer-heading">Productos</h4><ul class="footer-links"><li><a href="#productos">Carne Seca</a></li><li><a href="#productos">Machaca</a></li><li><a href="#productos">Chile Chiltepín</a></li><li><a href="#productos">Crema de Mezcal</a></li></ul></div>
+        <div class="footer-col"><h4 class="footer-heading">Contacto</h4><ul class="footer-links"><li><a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20Carne%20Seca%20El%20Inge" target="_blank" rel="noopener noreferrer">WhatsApp: 614 554 0702</a></li><li><span>Fresnillo, Zacatecas · Envíos Nacionales</span></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Carne Seca El Inge. Todos los derechos reservados.</p><p>Calidad Artesanal ✦</p></div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/526145540702?text=Hola,%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Carne%20Seca%20El%20Inge" class="wa-float" id="waFloat" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span class="wa-tooltip">¡Haz tu pedido!</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
